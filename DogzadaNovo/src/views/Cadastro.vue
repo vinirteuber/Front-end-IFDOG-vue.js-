@@ -1,3 +1,26 @@
+<script>
+  import axios from 'axios';
+  export default {
+    data() {
+      return {
+        user: {}
+      }
+    },
+    methods: {
+      async register() {
+        try {
+          const createdUser = await axios.post('http://localhost:8000/auth/', this.user)
+          this.$router.push('/login')
+        } catch(e) {
+          console.log(e)
+          alert("algo de errado não está certo.")
+        }
+      }
+    }
+  }
+</script>
+
+
 <template>
   <div class="outer">
     <div class="form">
@@ -22,6 +45,7 @@
                   type="text"
                   name="firstname"
                   placeholder="Digite seu primeiro nome"
+                  v-model="user.first_name"
                   required
                 />
               </div>
@@ -33,6 +57,7 @@
                   type="text"
                   name="lastname"
                   placeholder="Digite seu sobrenome"
+                  v-model="user.last_name"
                   required
                 />
               </div>
@@ -43,18 +68,20 @@
                   type="email"
                   name="email"
                   placeholder="Digite seu e-mail"
+                  v-model="user.email"
                   required
                 />
               </div>
 
               <div class="input-box">
-                <label for="number">Celular</label>
+                <label for="number">Usuario</label>
                 <input
                   id="number"
                   type="tel"
                   name="number"
-                  placeholder="(xx) xxxx-xxxx"
+                  v-model="user.username"
                   required
+                  placeholder="(xx) xxxx-xxxx"
                 />
               </div>
 
@@ -65,6 +92,7 @@
                   type="password"
                   name="password"
                   placeholder="Digite sua senha"
+                  v-model="user.password"
                   required
                 />
               </div>
@@ -76,13 +104,14 @@
                   type="password"
                   name="confirmPassword"
                   placeholder="Digite sua senha novamente"
+                  v-model="user.password_confirmation"
                   required
                 />
               </div>
             </div>
 
             <div class="continue-button">
-              <button><a href="/cachorrada">Continuar</a></button>
+              <button @click.prevent="register">Continuar</button>
             </div>
           </div>
         </form>

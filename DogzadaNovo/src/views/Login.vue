@@ -15,7 +15,7 @@
           await this.login(this.user);
           this.$router.push("/cachorrada");
         } catch {
-          alert("OOOPSSS");
+          alert("Email ou senha invalidos!");
         }
       },
     },
