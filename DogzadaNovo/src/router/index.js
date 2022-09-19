@@ -47,11 +47,6 @@ const router = createRouter({
           component: CachorrosView,
         },
         {
-          path: "/cachorrada",
-          name: "cachorros",
-          component: CachorrosView,
-        },
-        {
           path: "/contate",
           name: "contate",
           component: Contate,

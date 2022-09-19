@@ -19,7 +19,7 @@
             <a href="/login">Meu Perfil</a>
           </li>
           <li>
-            <a href="/login">Login</a>
+            <a href="/signin">Login/Registro</a>
           </li>
         </ul>
       </div>

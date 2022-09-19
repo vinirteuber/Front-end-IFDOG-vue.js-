@@ -14,7 +14,7 @@
         </div>
 
         <div class="input-buttons">
-          <a href="/cachorrada">
+          <a href="/login">
             <input type="button" value="Entrar" />
           </a>
         </div>
@@ -22,8 +22,9 @@
           <span> ou </span>
         </div>
         <div class="input-buttons">
-          <a href="/cadastro"></a>
+          <a href="/cadastro">
           <input type="button" value="Cadastre-se" />
+        </a>
         </div>
       </div>
     </main>
