@@ -22,7 +22,7 @@ export default {
       }
   },
   async created() {
-    const comentarios = await axios.get("http://127.0.0.1:8000/coments/");
+    const comentarios = await axios.post("http://127.0.0.1:8000/coments/");
     this.comentarios = comentarios.data;
     
   },
@@ -42,7 +42,8 @@ export default {
         "
         />
         <div class="submit">
-          <button v-on:click="addComment" type="submit" class="btn btn-primary">Enviar</button>
+          <button v-on:click="created" type="submit" class="btn btn-primary">Enviar</button>
+          
         </div>
       </div>
     </div>

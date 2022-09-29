@@ -6,7 +6,7 @@ export default {
   
   <template>
   <div class="card">
-    <h1>{{ comentarios.autor }}</h1>
+    <h1>{{ comentarios.username }}</h1>
     <h2>{{ comentarios.comentario }}</h2>
   </div>
 </template>

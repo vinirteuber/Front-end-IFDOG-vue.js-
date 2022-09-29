@@ -136,15 +136,6 @@
     border: none;
   }
 
-  body {
-    min-height: 100vh;
-    display: flex;
-    justify-content: left;
-    margin-left: 3rem;
-    align-items: center;
-    background: linear-gradient(#161e35, #3071e7);
-  }
-
   main {
     display: flex;
     width: 50%;

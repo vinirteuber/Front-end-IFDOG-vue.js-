@@ -1,7 +1,10 @@
 <template>
   <header>
     <div class="logo">
-      <img src="@/assets/img/IMG_20220714_153653.png" alt="" />
+      <picture>
+        <source srcset="@/assets/img/logomobile.png" media="(max-width: 890px)" >
+        <img src="@/assets/img/IMG_20220714_153653.png" alt="" />
+      </picture>
 
       <div class="menu">
         <ul>
@@ -27,3 +30,42 @@
   </header>
   <RouterView />
 </template>
+
+<script>
+export default {
+    data() {
+      return {
+        user: [],
+      };
+    },
+    async created() {
+      const user = await axios.get("http://localhost:8000/token/", user);
+      this.user = cachorros.data;
+    },
+  };
+</script>
+
+
+<style scoped>
+    @media only screen and (max-width: 890px) {
+
+    .logo{
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }    
+        
+        .menu{
+        display: none;
+      visibility: hidden;
+      }
+
+    section.images .circle {
+      clip-path: circle(35% at right 80%);
+    }
+  }
+
+
+</style>
+

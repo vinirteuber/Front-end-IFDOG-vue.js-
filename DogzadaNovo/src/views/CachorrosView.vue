@@ -18,7 +18,7 @@
   };
 </script>
 <template>
-  <div>
+  <div class="carrossel">
     <Carrosel />
   </div>
   <div class="card-group">
@@ -30,4 +30,5 @@
   </div>
 </template>
 
-<style></style>
+<style scoped>
+</style>

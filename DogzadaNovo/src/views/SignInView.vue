@@ -39,14 +39,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 
-/* * {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-} */
-
 .outer {
   background: linear-gradient(#161e35, #3071e7);
   background-repeat: no-repeat;
@@ -167,4 +159,40 @@ section.images .circle {
   clip-path: circle(40% at left 80%);
   z-index: 0;
 }
+
+@media only screen and (min-width: 900px) and (max-width: 1200px) {
+    section.images img {
+      width: 110%;
+    }
+
+    section.images .circle {
+      clip-path: circle(35% at right 80%);
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    section.images {
+      display: none;
+      visibility: hidden;
+    }
+
+    main {
+      width: 100vw;
+    }
+  }
+
+  @media only screen and (max-width: 450px) {
+    main h1 {
+      font-size: 2rem;
+    }
+
+    main .alternative span {
+      font-size: 0.8rem;
+    }
+
+    main form label span,
+    main form input[type="submit"] {
+      font-size: 1rem;
+    }
+  }
 </style>

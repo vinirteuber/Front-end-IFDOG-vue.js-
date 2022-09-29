@@ -2,7 +2,7 @@
   <Carousel :autoplay="3000" :wrap-around="true" :itemsToShow="1">
     <Slide v-for="slide in 5" :key="slide">
       <div class="carousel__item">
-        <img src="../assets/img/CONTRASRT (1).png" alt="" />
+        <img src="../assets/img/CONTRASRT.png" alt="" />
       </div>
     </Slide>
 
@@ -47,7 +47,7 @@
   }
 
   .carousel__item {
-    width: 500px;
+    width: 700px;
     background: linear-gradient(#2645a3, #5089f5);
     background-repeat: no-repeat;
     color: black;
@@ -56,11 +56,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    min-width: 100%;
+    
   }
 
   .carousel__item img {
-    border: 10px solid #00b7ff;
-    border-radius: 12px;
+    border-radius: 2px;
     width: 100vw;
   }
 
@@ -72,7 +73,7 @@
   .carousel__prev,
   .carousel__next {
     box-sizing: content-box;
-    border: 5px solid white;
+    border: 3px solid white;
   }
 
   .carousel__prev .carousel__next {
@@ -80,11 +81,11 @@
   }
 
   .carousel__prev {
-    margin-left: 15%;
+    margin-left: 10%;
   }
 
   .carousel__next {
-    margin-right: 15%;
+    margin-right: 10%;
   }
 
   button {

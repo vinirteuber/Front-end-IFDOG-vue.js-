@@ -31,4 +31,8 @@
     justify-content: center;
     min-width: 306px;
   }
+
+  @media only screen and (min-width: 450px){
+    
+  }
 </style>
