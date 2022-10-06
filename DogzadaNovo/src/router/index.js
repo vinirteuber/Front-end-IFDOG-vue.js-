@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
 import CachorrosView from "../views/CachorrosView.vue";
 import Login from "@/views/Login.vue";
 import SignInView from "@/views/SignInView.vue";
@@ -7,6 +6,7 @@ import Cadastro from "@/views/Cadastro.vue";
 import Contate from "@/views/Contate.vue";
 import Comentarios from "@/views/Comentarios.vue";
 import Carrosel from "@/components/Carrosel.vue";
+import Singout from "@/views/SingoutView.vue"
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -45,6 +45,11 @@ const router = createRouter({
           path: "/cachorrada",
           name: "home",
           component: CachorrosView,
+        },
+        {
+          path: "/singout",
+          name: "singout",
+          component: Singout,
         },
         {
           path: "/contate",

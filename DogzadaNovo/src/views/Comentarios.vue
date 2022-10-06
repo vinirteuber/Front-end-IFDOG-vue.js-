@@ -26,7 +26,7 @@ export default {
       }
   },
   async created() {
-    const comentarios = await axios.get("http://127.0.0.1:8000/coments/");
+    const comentarios = await axios.get("http://191.52.55.103:8000/coments/");
     this.comentarios = comentarios.data;
     
   },
@@ -78,7 +78,6 @@ export default {
 }
 
 h1 {
-  margin-left: 1rem;
   background: -webkit-linear-gradient(45deg, #8a93e4, #00b7ff, #3071e7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

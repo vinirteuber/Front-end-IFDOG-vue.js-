@@ -5,8 +5,8 @@ export default {
 </script>
   
   <template>
-  <div class="comentarios">
     <div class="full">
+  <div class="comentarios">
       <h1>{{ comentarios.autor.username }}</h1>
       <h2>{{ comentarios.comentario }}</h2>
     </div>
@@ -14,15 +14,16 @@ export default {
 </template>
   
   <style scoped>
-.descricao {
+
+.comentarios{
+
+  border-radius: 0px 10px 10px 10px ;
+  border: 1px solid #eef;
+  background-color: #161e35;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 306px;
-
+  margin-top: 20px;
+  margin-left: 20px;
 }
-
-
 
 h1{
   background: -webkit-linear-gradient(45deg, #8a93e4, #00b7ff, #3071e7);
@@ -32,12 +33,12 @@ h1{
 }
 
 h2{
+  width: 200px;
   margin-top: 7px;
   margin-left: 10px;
   font-size: 10pt;
+
 }
-
-
 
 .full{
   margin-left: 5%;

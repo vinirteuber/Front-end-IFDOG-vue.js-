@@ -9,7 +9,7 @@ export default {
   //   };
   // },
   async created() {
-    const user = await axios.get("http://localhost:8000/token/", user);
+    const user = await axios.get("http://191.52.55.103:8000/token/", user);
     this.user = cachorros.data;
   },
   computed: {

@@ -12,7 +12,7 @@
       };
     },
     async created() {
-      const cachorros = await axios.get("http://localhost:8000/cachorros/");
+      const cachorros = await axios.get("http://191.52.55.103:8000/cachorros/");
       this.cachorros = cachorros.data;
     },
   };

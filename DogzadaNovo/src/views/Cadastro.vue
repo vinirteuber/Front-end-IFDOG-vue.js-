@@ -9,7 +9,7 @@
     methods: {
       async register() {
         try {
-          const createdUser = await axios.post('http://localhost:8000/auth/', this.user)
+          const createdUser = await axios.post('http://191.52.55.103:8000/auth/', this.user)
           this.$router.push('/login')
         } catch(e) {
           console.log(e)
