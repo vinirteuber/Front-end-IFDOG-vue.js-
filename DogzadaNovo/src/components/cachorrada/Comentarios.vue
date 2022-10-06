@@ -8,7 +8,7 @@ export default {
     <div class="full">
   <div class="comentarios">
       <h1>{{ comentarios.autor.username }}</h1>
-      <h2>{{ comentarios.comentario }}</h2>
+      <h2>{{ comentarios.texto }}</h2>
     </div>
   </div>
 </template>

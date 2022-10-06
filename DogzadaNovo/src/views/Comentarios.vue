@@ -1,34 +1,47 @@
 <script>
 import Comentarios from "@/components/cachorrada/Comentarios.vue";
 import axios from "axios";
+import { mapStores, mapState } from 'pinia'
+import { useAuthStore } from '@/stores/auth'
 export default {
   components: { Comentarios },
   data() {
     return {
       comentarios: [],
-      comentario: {}
+      comentario: {
+        texto: "",
+        autor: 0
+      }
     };
+  },
+  computed: {
+    ...mapStores(useAuthStore),
+    ...mapState(useAuthStore, ['id'])
   },
   // created() {
   //   this.comentario.usuario = username.id
   // }
   methods: {
-    addComment() {
-        if (this.comentarios.trim() === '') {
-          return;
-        }
-
-        this.$emit('add-todo', {
-          comentario: this.comentarios,
-        });
-
-        this.comentario = '';
+    async addComment() {
+      if (this.comentario.texto.trim() === '') {
+        return;
       }
+
+      // this.$emit('add-todo', {
+      //   comentario: this.comentarios,
+      // });
+
+      this.comentario.autor = this.id;
+      await axios.post('http://191.52.55.103:8000/coments/', this.comentario)
+      await this.getAllComments()
+    },
+    async getAllComments(){
+      const comentarios = await axios.get("http://191.52.55.103:8000/coments/");
+      this.comentarios = comentarios.data;
+    }
   },
   async created() {
-    const comentarios = await axios.get("http://191.52.55.103:8000/coments/");
-    this.comentarios = comentarios.data;
-    
+    await this.getAllComments()
   },
 };
 </script>
@@ -54,7 +67,7 @@ export default {
         v-model="comentario.texto"
         />
         <div class="submit">
-          <button v-on:click="created" type="submit" class="btn btn-primary">Enviar</button>
+          <button v-on:click.prevent="addComment" type="submit" class="btn btn-primary">Enviar</button>
           
         </div>
       </div>
