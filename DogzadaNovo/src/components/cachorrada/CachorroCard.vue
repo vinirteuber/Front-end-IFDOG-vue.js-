@@ -16,7 +16,7 @@
     </div>
 
     <div class="button">
-      <a href="/comentarios"><button>clique aqui</button></a>
+      <RouterLink to="/comentarios"><button>clique aqui</button></RouterLink>
       <div class="help-link">
         <span><a href="#">Estou em apuros? Clique aqui</a></span>
       </div>

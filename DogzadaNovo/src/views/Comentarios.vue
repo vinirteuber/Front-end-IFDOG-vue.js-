@@ -6,8 +6,12 @@ export default {
   data() {
     return {
       comentarios: [],
+      comentario: {}
     };
   },
+  // created() {
+  //   this.comentario.usuario = username.id
+  // }
   methods: {
     addComment() {
         if (this.comentarios.trim() === '') {
@@ -22,7 +26,7 @@ export default {
       }
   },
   async created() {
-    const comentarios = await axios.post("http://127.0.0.1:8000/coments/");
+    const comentarios = await axios.get("http://127.0.0.1:8000/coments/");
     this.comentarios = comentarios.data;
     
   },
@@ -34,12 +38,20 @@ export default {
       <div class="map">
         <img src="@/assets/img/ifcmapatt.png" alt="" />
       </div>
-      <div class="comment">
+      <div class="comentarios">
+    <Comentarios
+      v-for="comentario in comentarios"
+      :key="comentario.id"
+      :comentarios="comentario"
+    />
+  </div>
+      <div class="enviar">
         <input
           type="text"
           style="padding: 4px"
           placeholder="escreva seu comentario
         "
+        v-model="comentario.texto"
         />
         <div class="submit">
           <button v-on:click="created" type="submit" class="btn btn-primary">Enviar</button>
@@ -49,16 +61,16 @@ export default {
     </div>
   </div>
 
-  <div class="card-group">
-    <Comentarios
-      v-for="comentario in comentarios"
-      :key="comentario.id"
-      :comentarios="comentario"
-    />
-  </div>
 </template>
 
 <style scoped>
+
+.comentarios{
+  width: 0px;
+  height: 90px;
+}
+
+
 .outer {
   display: flex;
   justify-content: center;
@@ -72,7 +84,7 @@ h1 {
   -webkit-text-fill-color: transparent;
 }
 
-.comment {
+.enviar {
   margin-top: 790px;
   display: flex;
   height: 40px;
@@ -94,7 +106,7 @@ button {
   border-radius: 15px;
   background: linear-gradient(to right, #0419d6, #00b7ff);
   color: #fff;
-  font-weight: 500;
+  font-weight: 50 0;
   cursor: pointer;
   text-transform: uppercase;
   font-weight: 100;
@@ -117,7 +129,7 @@ button:hover {
   display: flex;
   border-radius: 16px 16px 16px 16px;
   margin-top: 5rem;
-  background: rgba(22, 30, 53, 0.65);
+  background: #161e35a6;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(12.5px);
   -webkit-backdrop-filter: blur(12.5px);
