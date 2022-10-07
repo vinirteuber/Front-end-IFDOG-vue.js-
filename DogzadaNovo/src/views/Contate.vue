@@ -70,98 +70,115 @@
 </template>
 
 <style scoped>
-  h1 {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+h1 {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  span {
-    margin-top: 1rem;
-  }
+span {
+  margin-top: 1rem;
+}
 
-  .title-1 {
-    color: #ee38d6;
-  }
-  .title-2 {
-    color: #394979;
-  }
-  .title-3 {
-    color: #00b7ff;
-  }
-  .title-4 {
-    color: yellow;
-  }
-  .title-5 {
-    color: red;
-  }
+.title-1 {
+  color: #ee38d6;
+}
+.title-2 {
+  color: #394979;
+}
+.title-3 {
+  color: #00b7ff;
+}
+.title-4 {
+  color: yellow;
+}
+.title-5 {
+  color: red;
+}
 
-  span {
-    margin-left: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 307px;
-  }
+span {
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 307px;
+}
 
-  .cards img {
-    width: 400px;
-    height: 350px;
-    border-radius: 16px 16px 0 0;
-  }
+.cards img {
+  width: 350px;
+  height: 350px;
+  border-radius: 16px 16px 0 0;
+}
 
-  button {
-    width: 300px;
-    height: 50px;
+button {
+  width: 300px;
+  height: 50px;
 
-    border-radius: 15px;
-    background: linear-gradient(to right, #0419d6, #00b7ff);
-    color: #fff;
-    margin: 0;
-    font-weight: 500;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-weight: 700;
-  }
+  border-radius: 15px;
+  background: linear-gradient(to right, #0419d6, #00b7ff);
+  color: #fff;
+  margin: 0;
+  font-weight: 500;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 700;
+}
 
-  button:hover {
-    height: 50px;
-    border-radius: 15px;
-    background: linear-gradient(to right, rgb(230, 108, 169), #970584);
-    font-weight: 700;
-  }
+button:hover {
+  height: 50px;
+  border-radius: 15px;
+  background: linear-gradient(to right, rgb(230, 108, 169), #970584);
+  font-weight: 700;
+}
 
-  .desc {
-    margin: 0;
-    flex-direction: column;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.desc {
+  margin: 0;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .outer {
-    color: #eef;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 12rem;
+.outer {
+  color: #eef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+  background-repeat: no-repeat;
+}
 
-    background-repeat: no-repeat;
+.cards {
+  margin-top: 20px;
+  flex-direction: column;
+  background-color: #161e35;
+  width: 350px;
+  margin-right: 15px;
+  border-radius: 16px;
+}
 
-    flex-direction: column;
-  }
+.container {
+  display: flex;
+}
 
-  .cards {
-    background-color: #161e35;
-    width: 400px;
-    margin-right: 15px;
-    border-radius: 16px;
-  }
-
+@media only screen and (min-width: 900px) and (max-width: 1200px) {
   .container {
-    display: flex;
+    flex-direction: column;
   }
+}
+
+@media only screen and (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .container {
+    flex-direction: column;
+  }
+}
 </style>

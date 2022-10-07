@@ -1,7 +1,7 @@
 <script>
-  export default {
-    props: ["cachorro"],
-  };
+export default {
+  props: ["cachorro"],
+};
 </script>
 
 <template>
@@ -25,14 +25,10 @@
 </template>
 
 <style scoped>
-  .descricao {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 306px;
-  }
-
-  @media only screen and (min-width: 450px){
-    
-  }
+.descricao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 306px;
+}
 </style>
