@@ -10,7 +10,7 @@
       async register() {
         try {
           const createdUser = await axios.post(
-            "http://localhost:8000/auth/",
+            "http://192.168.100.52:8000/auth/",
             this.user
           );
           this.$router.push("/login");

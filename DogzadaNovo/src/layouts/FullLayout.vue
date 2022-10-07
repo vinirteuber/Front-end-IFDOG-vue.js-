@@ -1,21 +1,21 @@
 <script>
-  import { mapState, mapStores } from "pinia";
-  import { useAuthStore } from "@/stores/auth";
-  export default {
-    // data() {
-    //   return {
-    //     user: [],
-    //   };
-    // },
-    async created() {
-      const user = await axios.get("http://localhost:8000/token/", user);
-      this.user = cachorros.data;
-    },
-    computed: {
-      ...mapStores(useAuthStore),
-      ...mapState(useAuthStore, ["username"]),
-    },
-  };
+import { mapState, mapStores } from "pinia";
+import { useAuthStore } from "@/stores/auth";
+export default {
+  // data() {
+  //   return {
+  //     user: [],
+  //   };
+  // },
+  async created() {
+    const user = await axios.get("http://192.168.100.52:8000/token/", user);
+    this.user = cachorros.data;
+  },
+  computed: {
+    ...mapStores(useAuthStore),
+    ...mapState(useAuthStore, ["username"]),
+  },
+};
 </script>
 <template>
   <header>
@@ -57,20 +57,20 @@
 </template>
 
 <style scoped>
-  @media only screen and (max-width: 890px) {
-    .logo {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .menu {
-      display: none;
-      visibility: hidden;
-    }
-
-    section.images .circle {
-      clip-path: circle(35% at right 80%);
-    }
+@media only screen and (max-width: 890px) {
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
+
+  .menu {
+    display: none;
+    visibility: hidden;
+  }
+
+  section.images .circle {
+    clip-path: circle(35% at right 80%);
+  }
+}
 </style>
