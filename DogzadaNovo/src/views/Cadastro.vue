@@ -1,25 +1,27 @@
 <script>
-  import axios from 'axios';
+  import axios from "axios";
   export default {
     data() {
       return {
-        user: {}
-      }
+        user: {},
+      };
     },
     methods: {
       async register() {
         try {
-          const createdUser = await axios.post('http://191.52.55.103:8000/auth/', this.user)
-          this.$router.push('/login')
-        } catch(e) {
-          console.log(e)
-          alert("algo de errado não está certo.")
+          const createdUser = await axios.post(
+            "http://localhost:8000/auth/",
+            this.user
+          );
+          this.$router.push("/login");
+        } catch (e) {
+          console.log(e);
+          alert("algo de errado não está certo.");
         }
-      }
-    }
-  }
+      },
+    },
+  };
 </script>
-
 
 <template>
   <div class="outer">

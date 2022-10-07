@@ -5,14 +5,14 @@ export const useAuthStore = defineStore({
   state: () => ({
     access: "",
     username: "",
-    id: 0
+    id: 0,
   }),
   actions: {
     async login(user) {
-      const { data } = await axios.post("http://191.52.55.103:8000/token/", user);
+      const { data } = await axios.post("http://localhost:8000/token/", user);
       this.access = data.access;
       this.username = data.username;
-      this.id = data.id 
+      this.id = data.id;
     },
   },
 });

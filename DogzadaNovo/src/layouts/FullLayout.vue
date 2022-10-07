@@ -1,51 +1,53 @@
-          
 <script>
-  import { mapState, mapStores} from 'pinia'
-  import { useAuthStore } from '@/stores/auth'
-export default {
-  // data() {
-  //   return {
-  //     user: [],
-  //   };
-  // },
-  async created() {
-    const user = await axios.get("http://191.52.55.103:8000/token/", user);
-    this.user = cachorros.data;
-  },
-  computed: {
-    ...mapStores(useAuthStore),
-    ...mapState(useAuthStore, ['username'])
-  }
-};
+  import { mapState, mapStores } from "pinia";
+  import { useAuthStore } from "@/stores/auth";
+  export default {
+    // data() {
+    //   return {
+    //     user: [],
+    //   };
+    // },
+    async created() {
+      const user = await axios.get("http://localhost:8000/token/", user);
+      this.user = cachorros.data;
+    },
+    computed: {
+      ...mapStores(useAuthStore),
+      ...mapState(useAuthStore, ["username"]),
+    },
+  };
 </script>
 <template>
   <header>
     <div class="logo">
       <picture>
-        <source srcset="@/assets/img/logomobile.png" media="(max-width: 890px)">
+        <source
+          srcset="@/assets/img/logomobile.png"
+          media="(max-width: 890px)"
+        />
         <img src="@/assets/img/IMG_20220714_153653.png" alt="" />
       </picture>
 
       <div class="menu">
         <ul>
           <li>
-            <a href="/cachorrada">Home</a>
+            <RouterLink to="/cachorrada">Home</RouterLink>
           </li>
           <li>
-            <a href="/comentarios">Aba de Comentarios</a>
+            <RouterLink to="/comentarios">Aba de Comentarios</RouterLink>
           </li>
 
           <li>
-            <a href="/contate">Sobre nós</a>
+            <RouterLink to="/contate">Sobre nós</RouterLink>
           </li>
           <li>
-            <a href="/login">Meu Perfil</a>
+            <RouterLink to="/login">Meu Perfil</RouterLink>
           </li>
           <li v-if="username">
-            <a href="/cadastro">{{username}}</a>
+            <RouterLink to="/singout">{{ username }}</RouterLink>
           </li>
           <li v-else="username">
-            <a href="/signin">Login/Registro</a>
+            <RouterLink to="/signin">Login/Registro</RouterLink>
           </li>
         </ul>
       </div>
@@ -55,23 +57,20 @@ export default {
 </template>
 
 <style scoped>
-@media only screen and (max-width: 890px) {
+  @media only screen and (max-width: 890px) {
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-  .logo {
+    .menu {
+      display: none;
+      visibility: hidden;
+    }
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    section.images .circle {
+      clip-path: circle(35% at right 80%);
+    }
   }
-
-  .menu {
-    display: none;
-    visibility: hidden;
-  }
-
-  section.images .circle {
-    clip-path: circle(35% at right 80%);
-  }
-}
 </style>
-
