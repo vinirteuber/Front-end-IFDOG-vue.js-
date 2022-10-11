@@ -1,6 +1,8 @@
 <template>
   <div class="outer">
     <div class="container">
+      <div class="card-resp">
+
       <div class="cards">
         <div class="avatar">
           <img src="../assets/img/guga.png" alt="" />
@@ -15,6 +17,8 @@
           >
         </div>
       </div>
+      </div>
+      <div class="card-resp">
       <div class="cards">
         <div class="avatar">
           <img src="../assets/img/vini.png" alt="" />
@@ -27,6 +31,9 @@
           <a href="https://github.com/vinirteuber"><button>GitHub</button></a>
         </div>
       </div>
+         </div>
+        <div class="card-resp"> 
+
       <div class="cards">
         <div class="avatar">
           <img src="../assets/img/bryann.png" alt="" />
@@ -41,6 +48,9 @@
           >
         </div>
       </div>
+        </div>
+        <div class="card-resp"> 
+
       <div class="cards">
         <div class="avatar">
           <img src="../assets/img/maros.png" alt="" />
@@ -53,6 +63,11 @@
           <a href="https://github.com/marosleo"><button>GitHub</button></a>
         </div>
       </div>
+        </div>
+
+        <div class="card-resp"> 
+
+
       <div class="cards">
         <div class="avatar">
           <img src="../assets/img/ivo.png" alt="" />
@@ -67,7 +82,10 @@
       </div>
     </div>
   </div>
+        </div>
 </template>
+
+
 
 <style scoped>
 h1 {
@@ -75,6 +93,12 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.card-resp{
+  display: flex;
+    flex-wrap:wrap ;
+    justify-content: center;
 }
 
 span {
