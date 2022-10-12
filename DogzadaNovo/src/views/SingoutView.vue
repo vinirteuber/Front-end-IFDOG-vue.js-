@@ -1,3 +1,23 @@
+<script>
+import { mapState, mapStores } from "pinia";
+import { useAuthStore } from "@/stores/auth";
+export default {
+  // data() {
+  //   return {
+  //     user: [],
+  //   };
+  // },
+  async created() {
+    const user = await axios.get("http://localhost:8000/token/", user);
+    this.user = cachorros.data;
+  },
+  computed: {
+    ...mapStores(useAuthStore),
+    ...mapState(useAuthStore, ["username","email"]),
+  },
+};
+</script>
+
 <template>
   <div class="outer">
     <div class="circle-1"></div>
@@ -9,6 +29,10 @@
           alt=""
         />
       </div>
+
+      <div>{{ username }}</div>
+      <div>{{ email }}</div>
+
       <div class="inp">
         <div class="new">
           <span>Novo nome:</span>
