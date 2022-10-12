@@ -30,11 +30,9 @@ export default {
     },
     async getAllComments() {
       const comentarios = await axios.get(
-<<<<<<< HEAD
+
         "http://localhost:8000/coments/"
-=======
-        "http://localhost:8000/coments/"  
->>>>>>> b1b65b607e994a185c600e901e9c908311b34686
+
       );
       this.comentarios = comentarios.data;
     },

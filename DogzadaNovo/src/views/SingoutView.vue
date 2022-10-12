@@ -19,6 +19,7 @@ export default {
 </script>
 
 <template>
+  <div></div>
   <div class="outer">
     <div class="circle-1"></div>
     <div class="circle-2"></div>
