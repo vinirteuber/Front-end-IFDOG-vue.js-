@@ -16,7 +16,7 @@ export default {
     </div>
 
     <div class="button">
-      <RouterLink to="/comentarios"><button>clique aqui</button></RouterLink>
+      <RouterLink to="/Especificacoes"><button>clique aqui</button></RouterLink>
       <div class="help-link">
         <span><a href="#">Estou em apuros? Clique aqui</a></span>
       </div>

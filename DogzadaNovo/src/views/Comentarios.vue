@@ -25,14 +25,12 @@ export default {
       }
 
       this.comentario.autor = this.id;
-      await axios.post("http://localhost:8000/coments/", this.comentario);
+      await axios.post("http://192.168.100.52:8000/coments/", this.comentario);
       await this.getAllComments();
     },
     async getAllComments() {
       const comentarios = await axios.get(
-
-        "http://localhost:8000/coments/"
-
+        "http://192.168.100.52:8000/coments/"
       );
       this.comentarios = comentarios.data;
     },

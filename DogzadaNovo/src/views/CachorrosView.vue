@@ -1,21 +1,21 @@
 <script>
-  import CachorroCard from "@/components/cachorrada/CachorroCard.vue";
-  import Carousel from "@/components/Carrosel.vue";
-  import axios from "axios";
-  import Carrosel from "../components/Carrosel.vue";
-  export default {
-    components: { CachorroCard, Carrosel },
-    data() {
-      return {
-        cachorros: [],
-        Carousel,
-      };
-    },
-    async created() {
-      const cachorros = await axios.get("http://localhost:8000/cachorros/");
-      this.cachorros = cachorros.data;
-    },
-  };
+import CachorroCard from "@/components/cachorrada/CachorroCard.vue";
+import Carousel from "@/components/Carrosel.vue";
+import axios from "axios";
+import Carrosel from "../components/Carrosel.vue";
+export default {
+  components: { CachorroCard, Carrosel },
+  data() {
+    return {
+      cachorros: [],
+      Carousel,
+    };
+  },
+  async created() {
+    const cachorros = await axios.get("http://192.168.100.52:8000/cachorros/");
+    this.cachorros = cachorros.data;
+  },
+};
 </script>
 <template>
   <div class="carrossel">

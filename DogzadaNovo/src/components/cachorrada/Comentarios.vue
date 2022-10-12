@@ -7,7 +7,9 @@ export default {
 <template>
   <div class="full">
     <div class="comentarios">
-      <h1>{{ comentarios.autor.username }}</h1>
+      <RouterLink to="/singout"
+        ><h1>{{ comentarios.autor.username }}</h1></RouterLink
+      >
       <h2>{{ comentarios.texto }}</h2>
     </div>
   </div>

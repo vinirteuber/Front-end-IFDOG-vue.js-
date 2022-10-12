@@ -2,18 +2,13 @@
 import { mapState, mapStores } from "pinia";
 import { useAuthStore } from "@/stores/auth";
 export default {
-  // data() {
-  //   return {
-  //     user: [],
-  //   };
-  // },
   async created() {
-    const user = await axios.get("http://localhost:8000/token/", user);
+    const user = await axios.get("http://192.168.100.52:8000/token/", user);
     this.user = cachorros.data;
   },
   computed: {
     ...mapStores(useAuthStore),
-    ...mapState(useAuthStore, ["username","email"]),
+    ...mapState(useAuthStore, ["username", "email"]),
   },
 };
 </script>
@@ -30,9 +25,16 @@ export default {
           alt=""
         />
       </div>
-
-      <div>{{ username }}</div>
-      <div>{{ email }}</div>
+      <div class="user-name">
+        <div>
+          <h1>{{ username }}</h1>
+        </div>
+      </div>
+      <div class="user-email">
+        <div>
+          <span>{{ email }}</span>
+        </div>
+      </div>
 
       <div class="inp">
         <div class="new">
@@ -79,6 +81,16 @@ input {
   color: #fff;
   outline: none;
   padding: 3% 5%;
+}
+
+.user-name {
+  background: -webkit-linear-gradient(45deg, #8a93e4, #00b7ff, #3071e7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.user-email {
+  color: #eef;
 }
 
 button {
