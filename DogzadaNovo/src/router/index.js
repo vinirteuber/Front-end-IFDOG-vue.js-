@@ -7,6 +7,7 @@ import Contate from "@/views/Contate.vue";
 import Comentarios from "@/views/Comentarios.vue";
 import Carrosel from "@/components/Carrosel.vue";
 import Singout from "@/views/SingoutView.vue"
+import Emergencia from "@/views/EmergenciaView.vue"
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -55,6 +56,11 @@ const router = createRouter({
           path: "/contate",
           name: "contate",
           component: Contate,
+        },
+        {
+          path: "/emergencia",
+          name: "emergencia",
+          component: Emergencia,
         },
         {
           path: "/teste",
