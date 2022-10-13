@@ -1,7 +1,7 @@
 <script>
-export default {
-  props: ["cachorro"],
-};
+  export default {
+    props: ["cachorro"],
+  };
 </script>
 
 <template>
@@ -16,7 +16,9 @@ export default {
     </div>
 
     <div class="button">
-      <RouterLink to="/Especificacoes"><button>clique aqui</button></RouterLink>
+      <RouterLink :to="`/cachorro/${cachorro.id}`"
+        ><button>clique aqui</button></RouterLink
+      >
       <div class="help-link">
         <span><a href="#">Estou em apuros? Clique aqui</a></span>
       </div>
@@ -25,10 +27,10 @@ export default {
 </template>
 
 <style scoped>
-.descricao {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 306px;
-}
+  .descricao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 306px;
+  }
 </style>

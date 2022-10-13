@@ -3,7 +3,7 @@ import { mapState, mapStores } from "pinia";
 import { useAuthStore } from "@/stores/auth";
 export default {
   async created() {
-    const user = await axios.get("http://192.168.100.52:8000/token/", user);
+    const user = await axios.get("http://localhost:8000/token/", user);
     this.user = cachorros.data;
   },
   computed: {

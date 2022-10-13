@@ -54,9 +54,10 @@ const router = createRouter({
           component: Singout,
         },
         {
-          path: "/especificacoes",
+          path: "/cachorro/:id",
           name: "especificacoes",
           component: Especificacoes,
+          props: true
         },
         {
           path: "/contate",

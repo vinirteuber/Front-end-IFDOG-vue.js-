@@ -11,7 +11,7 @@ export const useAuthStore = defineStore({
   actions: {
     async login(user) {
       const { data } = await axios.post(
-        "http://192.168.100.52:8000/token/",
+        "http://localhost:8000/token/",
         user
       );
       this.access = data.access;
