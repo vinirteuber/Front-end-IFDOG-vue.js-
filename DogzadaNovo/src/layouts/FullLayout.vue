@@ -39,13 +39,14 @@ export default {
       </nav>
     </div>
     <div class="logo">
+      <RouterLink to="/cachorrada">
       <picture>
         <source
           srcset="@/assets/img/logomobile.png"
           media="(max-width: 890px)"
         />
         <img src="@/assets/img/IMG_20220714_153653.png" alt="" />
-      </picture>
+      </picture></RouterLink>
 
       <div class="menu">
         <ul>

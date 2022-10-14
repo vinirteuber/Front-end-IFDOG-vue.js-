@@ -8,8 +8,8 @@
   <div class="card">
     <img
       src="@/assets/img/guia_racas_golden_retriever_dogvibe.jpg"
-      alt="gato"
-    />
+      alt="cachorro"
+    />  
     <h1>{{ cachorro.nome }}</h1>
     <div class="descricao">
       {{ cachorro.descricao }}
