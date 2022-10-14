@@ -18,36 +18,40 @@ export default {
 };
 </script>
 <template>
+
   <header>
-    <div class="outer">
-      <nav role="navigation">
-        <div id="menuToggle">
-          <input type="checkbox" />
+    <div class="tudo">
+
+      <div class="hamburger-menu">
+        <input id="menu__toggle" type="checkbox" />
+        <label class="menu__btn" for="menu__toggle">
           <span></span>
-          <span></span>
-          <span></span>
-          <ul id="menu">
-            <a href="#"><li>Home</li></a>
-            <a href="#"><li>About</li></a>
-            <a href="#"><li>Info</li></a>
-            <a href="#"><li>Contact</li></a>
-            <a href="https://erikterwan.com/" target="_blank"
-              ><li>Show me more</li></a
-            >
-          </ul>
-        </div>
-      </nav>
-    </div>
-    <div class="logo">
-      <RouterLink to="/cachorrada">
+        </label>
+        
+        <ul class="menu__box">
+          <li>  <RouterLink to="/cachorrada">Home</RouterLink></li>
+          <li><RouterLink to="/comentarios">Aba de Comentarios</RouterLink></li>
+          <li><RouterLink to="/contate">Sobre nós</RouterLink></li>
+          <li v-if="username">
+            <RouterLink to="/singout">{{ username }}</RouterLink>
+          </li>
+          <li v-else="username">
+            <RouterLink to="/signin">Login/Registro</RouterLink>
+          </li>
+    </ul>
+  </div>
+
+  <div class="logo">
+    <RouterLink to="/cachorrada">
       <picture>
         <source
-          srcset="@/assets/img/logomobile.png"
-          media="(max-width: 890px)"
+        srcset="@/assets/img/logomobile.png"
+        media="(max-width: 890px)"
         />
         <img src="@/assets/img/IMG_20220714_153653.png" alt="" />
       </picture></RouterLink>
-
+    
+      
       <div class="menu">
         <ul>
           <li>
@@ -69,123 +73,90 @@ export default {
         </ul>
       </div>
     </div>
+  </div>
   </header>
   <RouterView />
 </template>
 
 <style scoped>
-.outer {
-  margin: 0;
-  padding: 0;
-    display: none;
-    visibility: hidden;
-  /* make it look decent enough */
-  background: #232323;
-  color: #cdcdcd;
-  font-family: "Avenir Next", "Avenir", sans-serif;
+
+
+.hamburger-menu{
+  z-index: 10;
+  display: none;
+  visibility: hidden ;
 }
 
-#menuToggle {
-  display: block;
-  position: relative;
-  top: 50px;
-  left: 50px;
-
-  z-index: 1;
-
-  -webkit-user-select: none;
-  user-select: none;
+#menu__toggle {
+  opacity: 0;
 }
-
-#menuToggle a {
-  text-decoration: none;
-  color: #232323;
-
-  transition: color 0.3s ease;
+#menu__toggle:checked + .menu__btn > span {
+  transform: rotate(45deg);
 }
-
-#menuToggle a:hover {
-  color: tomato;
+#menu__toggle:checked + .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0deg);
 }
-
-#menuToggle input {
-  display: block;
-  width: 40px;
-  height: 32px;
+#menu__toggle:checked + .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .menu__box {
+  left: 0 !important;
+}
+.menu__btn {
   position: absolute;
-  top: -7px;
-  left: -5px;
-
+  top: 20px;
+  left: 20px;
+  width: 26px;
+  height: 26px;
   cursor: pointer;
-
-  opacity: 0;
-  z-index: 2;
-
-  -webkit-touch-callout: none;
-}
-
-#menuToggle span {
-  display: block;
-  width: 33px;
-  height: 4px;
-  margin-bottom: 5px;
-  position: relative;
-
-  background: #cdcdcd;
-  border-radius: 3px;
-
   z-index: 1;
-
-  transform-origin: 4px 0px;
-
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
-    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
 }
-
-#menuToggle span:first-child {
-  transform-origin: 0% 0%;
-}
-
-#menuToggle span:nth-last-child(2) {
-  transform-origin: 0% 100%;
-}
-
-#menuToggle input:checked ~ span {
-  opacity: 1;
-  transform: rotate(45deg) translate(-2px, -1px);
-  background: #232323;
-}
-
-#menuToggle input:checked ~ span:nth-last-child(3) {
-  opacity: 0;
-  transform: rotate(0deg) scale(0.2, 0.2);
-}
-
-#menuToggle input:checked ~ span:nth-last-child(2) {
-  transform: rotate(-45deg) translate(0, -1px);
-}
-
-#menu {
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
   position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #616161;
+  transition-duration: .25s;
+}
+.menu__btn > span::before {
+  content: '';
+  top: -8px;
+}
+.menu__btn > span::after {
+  content: '';
+  top: 8px;
+}
+.menu__box {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: -100%;
   width: 300px;
-  margin: -100px 0 0 -50px;
-  padding: 50px;
-  padding-top: 125px;
-  background: #ededed;
-  list-style-type: none;
-  -webkit-font-smoothing: antialiased;
-  transform-origin: 0% 0%;
-  transform: translate(-100%, 0);
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  height: 100%;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  background-color: #ECEFF1;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+  transition-duration: .25s;
 }
-
-#menu li {
-  padding: 10px 0;
-  font-size: 22px;
+.menu__item {
+  display: block;
+  padding: 12px 24px;
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  transition-duration: .25s;
 }
-
-#menuToggle input:checked ~ ul {
-  transform: none;
+.menu__item:hover {
+  background-color: #CFD8DC;
 }
 
 @media only screen and (min-width: 900px) and (max-width: 1880px) {
@@ -204,11 +175,24 @@ export default {
 
   .menu {
     display: none;
-    visibility: hidden;
+    visibility: vi;
+
   }
+
+  .tudo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} 
+
 
   section.images .circle {
     clip-path: circle(35% at right 80%);
   }
+
+  .hamburger-menu{
+    display: block;
+    visibility: visible ;
+}
 }
 </style>

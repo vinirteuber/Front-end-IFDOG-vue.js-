@@ -47,6 +47,7 @@
   }
 
   .carousel__item {
+    
     width: 700px;
     background: linear-gradient(#2645a3, #5089f5);
     background-repeat: no-repeat;
