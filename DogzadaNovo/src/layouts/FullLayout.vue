@@ -18,18 +18,16 @@ export default {
 };
 </script>
 <template>
-
   <header>
     <div class="tudo">
-
       <div class="hamburger-menu">
         <input id="menu__toggle" type="checkbox" />
         <label class="menu__btn" for="menu__toggle">
           <span></span>
         </label>
-        
+
         <ul class="menu__box">
-          <li>  <RouterLink to="/cachorrada">Home</RouterLink></li>
+          <li><RouterLink to="/cachorrada">Home</RouterLink></li>
           <li><RouterLink to="/comentarios">Aba de Comentarios</RouterLink></li>
           <li><RouterLink to="/contate">Sobre nós</RouterLink></li>
           <li v-if="username">
@@ -38,53 +36,50 @@ export default {
           <li v-else="username">
             <RouterLink to="/signin">Login/Registro</RouterLink>
           </li>
-    </ul>
-  </div>
-
-  <div class="logo">
-    <RouterLink to="/cachorrada">
-      <picture>
-        <source
-        srcset="@/assets/img/logomobile.png"
-        media="(max-width: 890px)"
-        />
-        <img src="@/assets/img/IMG_20220714_153653.png" alt="" />
-      </picture></RouterLink>
-    
-      
-      <div class="menu">
-        <ul>
-          <li>
-            <RouterLink to="/cachorrada">Home</RouterLink>
-          </li>
-          <li>
-            <RouterLink to="/comentarios">Aba de Comentarios</RouterLink>
-          </li>
-
-          <li>
-            <RouterLink to="/contate">Sobre nós</RouterLink>
-          </li>
-          <li v-if="username">
-            <RouterLink to="/singout">{{ username }}</RouterLink>
-          </li>
-          <li v-else="username">
-            <RouterLink to="/signin">Login/Registro</RouterLink>
-          </li>
         </ul>
       </div>
+
+      <div class="logo">
+        <RouterLink to="/cachorrada">
+          <picture>
+            <source
+              srcset="@/assets/img/logomobile.png"
+              media="(max-width: 890px)"
+            />
+            <img src="@/assets/img/IMG_20220714_153653.png" alt="" /> </picture
+        ></RouterLink>
+
+        <div class="menu">
+          <ul>
+            <li>
+              <RouterLink to="/cachorrada">Home</RouterLink>
+            </li>
+            <li>
+              <RouterLink to="/comentarios">Aba de Comentarios</RouterLink>
+            </li>
+
+            <li>
+              <RouterLink to="/contate">Sobre nós</RouterLink>
+            </li>
+            <li v-if="username">
+              <RouterLink to="/singout">{{ username }}</RouterLink>
+            </li>
+            <li v-else="username">
+              <RouterLink to="/signin">Login/Registro</RouterLink>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-  </div>
   </header>
   <RouterView />
 </template>
 
 <style scoped>
-
-
-.hamburger-menu{
+.hamburger-menu {
   z-index: 10;
   display: none;
-  visibility: hidden ;
+  visibility: hidden;
 }
 
 #menu__toggle {
@@ -106,12 +101,19 @@ export default {
 }
 .menu__btn {
   position: absolute;
-  top: 20px;
+  top: 40px;
   left: 20px;
   width: 26px;
   height: 26px;
   cursor: pointer;
   z-index: 1;
+}
+
+li {
+  margin-left: 10px;
+  color: #eef;
+  margin-bottom: 15px;
+  text-transform: uppercase;
 }
 .menu__btn > span,
 .menu__btn > span::before,
@@ -120,15 +122,15 @@ export default {
   position: absolute;
   width: 100%;
   height: 2px;
-  background-color: #616161;
-  transition-duration: .25s;
+  background-color: #ff00cc;
+  transition-duration: 0.25s;
 }
 .menu__btn > span::before {
-  content: '';
+  content: "";
   top: -8px;
 }
 .menu__btn > span::after {
-  content: '';
+  content: "";
   top: 8px;
 }
 .menu__box {
@@ -141,22 +143,27 @@ export default {
   margin: 0;
   padding: 80px 0;
   list-style: none;
-  background-color: #ECEFF1;
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
-  transition-duration: .25s;
+  background-color: #161e35ce;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  transition-duration: 0.25s;
 }
 .menu__item {
   display: block;
   padding: 12px 24px;
-  color: #333;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 100;
   text-decoration: none;
-  transition-duration: .25s;
+  transition-duration: 0.25s;
 }
 .menu__item:hover {
-  background-color: #CFD8DC;
+  background-color: #ffffff;
+}
+
+a:-webkit-any-link {
+  color: #eef;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 @media only screen and (min-width: 900px) and (max-width: 1880px) {
@@ -175,24 +182,21 @@ export default {
 
   .menu {
     display: none;
-    visibility: vi;
-
   }
 
-  .tudo{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} 
-
+  .tudo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
   section.images .circle {
     clip-path: circle(35% at right 80%);
   }
 
-  .hamburger-menu{
+  .hamburger-menu {
     display: block;
-    visibility: visible ;
-}
+    visibility: visible;
+  }
 }
 </style>
