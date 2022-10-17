@@ -45,7 +45,7 @@ export default {
     <div class="menu1">
       <div id="main-banner">
         <img
-          src="https://conteudo.imguol.com.br/c/entretenimento/54/2020/04/28/cachorro-pug-1588098472110_v2_1x1.jpg"
+        :src= " cachorro.foto.url "
         />
 
         <div id="main-banner-content"></div>
