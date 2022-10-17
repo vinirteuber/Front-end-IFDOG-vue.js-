@@ -44,7 +44,7 @@ const router = createRouter({
       component: () => import("@/layouts/FullLayout.vue"),
       children: [
         {
-          path: "/",
+          path: "/cachorrada",
           name: "home",
           component: CachorrosView,
         },
