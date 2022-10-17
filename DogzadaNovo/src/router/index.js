@@ -14,11 +14,11 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: "/",
+      path: "/login",
       component: () => import("@/layouts/BlankLayout.vue"),
       children: [
         {
-          path: "/login",
+          path: "",
           name: "login",
           component: Login,
         },
@@ -44,7 +44,7 @@ const router = createRouter({
       component: () => import("@/layouts/FullLayout.vue"),
       children: [
         {
-          path: "/cachorrada",
+          path: "/",
           name: "home",
           component: CachorrosView,
         },
