@@ -10,8 +10,12 @@
       :src= " cachorro.foto.url "/> 
     <h1>{{ cachorro.nome }}</h1>
     <div class="descricao">
-      {{ cachorro.descricao }}
+      <p>Desc: {{ cachorro.descricao }} </p>
     </div>
+    <div>
+    <p>Responsável: {{ cachorro.nome_responsavel }}</p>
+    </div>
+      <p>Telefone do Resposável: {{ cachorro.tel_responsavel }}</p>
 
     <div class="button">
       <RouterLink :to="`/cachorro/${cachorro.id}`"
