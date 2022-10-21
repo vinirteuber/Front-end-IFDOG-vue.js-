@@ -14,6 +14,8 @@ export default {
         altura: "",
         descricao: "",
         nome: "",
+        nome_responsavel: "",
+        tel_responsavel: "",
       },
     };
   },
@@ -59,16 +61,26 @@ export default {
           </div>
           <div class="peso">
             <h1>Peso:</h1>
-            <span>{{ cachorro.peso }}</span>
+            <span>{{ cachorro.peso }} KG</span>
           </div>
           <div class="altura">
             <h1>Altura:</h1>
-            <span> {{ cachorro.altura }}</span>
+            <span> {{ cachorro.altura }} CM</span>
           </div>
           <div class="Descrição">
             <h1>Descrição:</h1>
             <span> {{ cachorro.descricao }}</span>
           </div>
+          <div class="Responsável">
+            <h1>Responsável:</h1>
+            <span> {{ cachorro.nome_responsavel }}</span>
+          </div><div class="Telefone">
+            <h1>Contato do Responsável:</h1>
+           <a target="_blank"  :href="cachorro.tel_responsavel">Contato</a>
+           
+          </div>
+          
+
         </div>
       </div>
     </div>
@@ -82,7 +94,7 @@ span{
   margin-top: 14px;
 }
 
-.Descrição{
+.Descrição, .Responsável, .Telefone {
   display: flex ;
 }
 
@@ -106,7 +118,6 @@ span{
   box-shadow: 7px 7px 13px 0px rgba(226, 226, 226, 0.22);
   background-color: #161e35;
   width: 1000px;
-  height: 600px;
   color: #f7f7f7;
   text-align: center;
 }
