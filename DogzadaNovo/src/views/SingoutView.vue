@@ -6,16 +6,9 @@ export default {
     const user = await axios.get("http://localhost:8000/token/", user);
     this.user = cachorros.data;
   },
-  async editarPerfil() {
-    try {
-      await axios.p("http://localhost:8000/token/", user);
-    } catch {
-      alert("Erro");
-    }
-  },
   computed: {
     ...mapStores(useAuthStore),
-    ...mapState(useAuthStore,["username", "email"]),
+    ...mapState(useAuthStore, ["username", "email"]),
   },
 };
 </script>
@@ -50,7 +43,7 @@ export default {
         <div class="nickname">
           <input type="text" />
           <div class="btn">
-            <button @click="alterarPerfil">alterar</button>
+            <button>alterar</button>
           </div>
         </div>
         <div class="new">
