@@ -6,15 +6,22 @@ export default {
     const user = await axios.get("http://localhost:8000/token/", user);
     this.user = cachorros.data;
   },
+  async editarPerfil() {
+    try {
+      await axios.p("http://localhost:8000/token/", user);
+    } catch {
+      alert("Erro");
+    }
+  },
   computed: {
     ...mapStores(useAuthStore),
-    ...mapState(useAuthStore, ["username", "email"]),
+    ...mapState(useAuthStore,["username", "email"]),
   },
 };
 </script>
 
 <template>
-  <div></div>
+  <div>
   <div class="outer">
     <div class="circle-1"></div>
     <div class="circle-2"></div>
@@ -43,7 +50,7 @@ export default {
         <div class="nickname">
           <input type="text" />
           <div class="btn">
-            <button>alterar</button>
+            <button @click="alterarPerfil">alterar</button>
           </div>
         </div>
         <div class="new">
@@ -69,6 +76,7 @@ export default {
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <style scoped>
