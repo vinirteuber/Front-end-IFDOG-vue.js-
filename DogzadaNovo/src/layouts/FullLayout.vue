@@ -36,6 +36,8 @@
           </li>
           <li v-else>
             <RouterLink to="/signin">Login/Registro</RouterLink>
+            <a target="_blank" href="http://127.0.0.1:8000/admin/login/?next=/admin/">Administrar</a>
+
           </li>
         </ul>
       </div>
@@ -67,6 +69,9 @@
             </li>
             <li v-else>
               <RouterLink to="/signin">Login/Registro</RouterLink>
+            </li>
+            <li>
+              <a target="_blank" href="http://127.0.0.1:8000/admin/login/?next=/admin/">Administrar</a>
             </li>
           </ul>
         </div>

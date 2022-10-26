@@ -47,7 +47,7 @@
       <div class="container">
         <div class="avatar">
           <img
-            src="https://conteudo.imguol.com.br/c/entretenimento/54/2020/04/28/cachorro-pug-1588098472110_v2_1x1.jpg"
+            src="https://cdn1.vectorstock.com/i/1000x1000/20/65/man-avatar-profile-vector-21372065.jpg"
             alt=""
           />
         </div>
