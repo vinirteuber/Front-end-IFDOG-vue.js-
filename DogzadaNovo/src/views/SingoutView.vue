@@ -64,25 +64,25 @@
 
         <span>Nova nome:</span>
         <div class="new">
-          <input type="text" v-model="user.username" />
+          <input type="text" v-model="user.username" @keydown.enter="editarPerfil()" />
           <div class="btn"></div>
         </div>
         <span>Nova email:</span>
         <div class="new">
-          <input type="text" v-model="user.email" />
+          <input type="text" v-model="user.email" @keydown.enter="editarPerfil()"/>
           <div class="btn"></div>
         </div>
         <div class="new">
           <span>Nova senha:</span>
         </div>
         <div class="password">
-          <input type="text" />
+          <input type="text" @keydown.enter="editarPerfil()"/>
         </div>
         <div class="new">
           <span>Confirme a senha:</span>
         </div>
         <div class="re-password">
-          <input type="text" />
+          <input type="text" @keydown.enter="editarPerfil()"/>
           <div class="btn"></div>
         </div>
         <div class="logout">

@@ -48,6 +48,7 @@ export default {
       </div>
       <div class="input-field">
         <input
+          @keydown.enter="submitLogin()"
           v-model="user.username"
           type="text"
           placeholder="Digite seu E-mail"
@@ -58,6 +59,7 @@ export default {
       </div>
       <div class="input-field">
         <input
+        @keydown.enter="submitLogin()"
           v-model="user.password"
           type="Password"
           placeholder="Digite sua senha"

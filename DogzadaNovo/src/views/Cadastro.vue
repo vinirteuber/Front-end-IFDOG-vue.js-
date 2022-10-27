@@ -11,7 +11,8 @@
         try {
           const createdUser = await axios.post(
             "http://localhost:8000/auth/",
-            this.user
+            this.user, 
+            alert("Usuario registrado com sucesso"),
           );
           this.$router.push("/login");
         } catch (e) {
@@ -43,6 +44,7 @@
               <div class="input-box">
                 <label for="firstname">Primeiro Nome</label>
                 <input
+                @keydown.enter="register()"
                   id="firstname"
                   type="text"
                   name="firstname"
@@ -55,6 +57,7 @@
               <div class="input-box">
                 <label for="lastname">Sobrenome</label>
                 <input
+                @keydown.enter="register()"
                   id="lastname"
                   type="text"
                   name="lastname"
@@ -66,6 +69,7 @@
               <div class="input-box">
                 <label for="email">E-mail</label>
                 <input
+                @keydown.enter="register()"
                   id="email"
                   type="email"
                   name="email"
@@ -76,20 +80,22 @@
               </div>
 
               <div class="input-box">
-                <label for="number">Usuario</label>
+                <label for="number">Username</label>
                 <input
+                @keydown.enter="register()"
                   id="number"
                   type="tel"
                   name="number"
                   v-model="user.username"
                   required
-                  placeholder="(xx) xxxx-xxxx"
+                  placeholder="Digite seu username"
                 />
               </div>
 
               <div class="input-box">
                 <label for="password">Senha</label>
                 <input
+                @keydown.enter="register()"
                   id="password"
                   type="password"
                   name="password"
@@ -102,6 +108,7 @@
               <div class="input-box">
                 <label for="confirmPassword">Confirme sua Senha</label>
                 <input
+                  @keydown.enter="register()"
                   id="confirmPassword"
                   type="password"
                   name="confirmPassword"

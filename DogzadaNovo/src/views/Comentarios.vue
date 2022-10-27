@@ -48,6 +48,7 @@ export default {
     <div class="container">
       <div class="comentarios">
         <Comentarios
+          
           v-for="comentario in comentarios"
           :key="comentario.id"
           :comentarios="comentario"
@@ -58,6 +59,7 @@ export default {
   <div class="texts">
     <div class="enviar">
       <input
+        @keydown.enter="addComment()"
         type="text"
         style="padding: 4px"
         placeholder="escreva seu comentario
