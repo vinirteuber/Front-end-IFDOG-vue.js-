@@ -46,9 +46,7 @@ export default {
   <div class="all">
     <div class="menu1">
       <div id="main-banner">
-        <img
-        :src= " cachorro.foto.url "
-        />
+        <img :src="cachorro.foto.url" />
 
         <div id="main-banner-content"></div>
       </div>
@@ -74,13 +72,11 @@ export default {
           <div class="Responsável">
             <h1>Responsável:</h1>
             <span> {{ cachorro.nome_responsavel }}</span>
-          </div><div class="Telefone">
-            <h1>Contato do Responsável:</h1>
-           <a target="_blank"  :href="cachorro.tel_responsavel">Contato</a>
-           
           </div>
-          
-
+          <div class="button">
+            <i class="fa-brands fa-whatsapp"></i>
+            <a target="_blank" :href="cachorro.tel_responsavel">Contato</a>
+          </div>
         </div>
       </div>
     </div>
@@ -88,14 +84,37 @@ export default {
 </template>
 
 <style scoped>
+a {
+  color: #ffffff !important;
+  font-size: 18pt;
+}
 
-span{
+i {
+  font-size: 18pt;
+  margin-right: 10px;
+}
+.button {
+  margin-left: 350px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  width: 300px;
+  height: 60px;
+  background-color: #128c7e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+span {
   margin-left: 10px;
   margin-top: 14px;
 }
 
-.Descrição, .Responsável, .Telefone {
-  display: flex ;
+.Descrição,
+.Responsável,
+.Telefone {
+  display: flex;
 }
 
 #main-banner {
