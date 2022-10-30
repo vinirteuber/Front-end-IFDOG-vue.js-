@@ -9,6 +9,8 @@ import Comentarios from "@/views/Comentarios.vue";
 import Carrosel from "@/components/Carrosel.vue";
 import Singout from "@/views/SingoutView.vue";
 import Emergencia from "@/views/EmergenciaView.vue";
+import PostCachorro from "@/views/PostCachorro.vue";
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -78,6 +80,11 @@ const router = createRouter({
           path: "/comentarios",
           name: "comentarios",
           component: Comentarios,
+        },
+        {
+          path: "/postcachorro",
+          name: "postcachorro",
+          component: PostCachorro,
         },
       ],
     },

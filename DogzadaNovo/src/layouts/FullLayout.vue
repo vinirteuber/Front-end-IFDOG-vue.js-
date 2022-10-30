@@ -42,6 +42,9 @@ export default {
               >Administrar</a
             >
           </li>
+          <li>
+            <RouterLink to="/postcachorro">Novo Cão</RouterLink>
+          </li>
         </ul>
       </div>
 
@@ -79,6 +82,9 @@ export default {
                 href="http://127.0.0.1:8000/admin/login/?next=/admin/"
                 >Administrar</a
               >
+            </li>
+            <li>
+              <RouterLink to="/postcachorro">Novo Cão</RouterLink>
             </li>
           </ul>
         </div>
