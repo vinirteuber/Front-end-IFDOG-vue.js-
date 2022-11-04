@@ -10,7 +10,7 @@ import Carrosel from "@/components/Carrosel.vue";
 import Singout from "@/views/SingoutView.vue";
 import Emergencia from "@/views/EmergenciaView.vue";
 import PostCachorro from "@/views/PostCachorro.vue";
-
+import Loginadm from "@/views/Loginadm.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -29,6 +29,13 @@ const router = createRouter({
           name: "signin",
           component: SignInView,
         },
+
+        {
+          path: "/signin",
+          name: "signin",
+          component: SignInView,
+        },
+
         {
           path: "/cadastro",
           name: "cadastro",
@@ -59,7 +66,7 @@ const router = createRouter({
           path: "/cachorro/:id",
           name: "especificacoes",
           component: Especificacoes,
-          props: true
+          props: true,
         },
         {
           path: "/contate",

@@ -76,6 +76,12 @@
             <li v-else>
               <RouterLink to="/signin">Login/Registro</RouterLink>
             </li>
+            <li>
+              <RouterLink to="/loginadm">Administrar</RouterLink>
+            </li>
+            <li>
+              <RouterLink to="/postcachorro">Novo Cão</RouterLink>
+            </li>
           </ul>
         </div>
       </div>

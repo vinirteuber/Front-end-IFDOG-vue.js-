@@ -17,7 +17,7 @@
           this.$router.push("/login");
         } catch (e) {
           console.log(e);
-          alert("algo de errado não está certo.");
+          alert("As credenciais não batem.");
         }
       },
     },
