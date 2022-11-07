@@ -19,12 +19,12 @@
       async editarPerfil() {
         try {
           await axios.patch(
-            `http://localhost:8000/auth/${this.id}/`,
+            `http://localhost:8000/usuarios/${this.id}/`,
             this.user,
             alert("por favor deslogar para salvar as informações")
           );
         } catch {
-          alert("Erro 2222");
+          alert("Algo deu errado, tente novamente ");
         }
       },
     },
@@ -64,25 +64,33 @@
 
         <span>Nova nome:</span>
         <div class="new">
-          <input type="text" v-model="user.username" @keydown.enter="editarPerfil()" />
+          <input
+            type="text"
+            v-model="user.username"
+            @keydown.enter="editarPerfil()"
+          />
           <div class="btn"></div>
         </div>
         <span>Nova email:</span>
         <div class="new">
-          <input type="text" v-model="user.email" @keydown.enter="editarPerfil()"/>
+          <input
+            type="text"
+            v-model="user.email"
+            @keydown.enter="editarPerfil()"
+          />
           <div class="btn"></div>
         </div>
         <div class="new">
           <span>Nova senha:</span>
         </div>
         <div class="password">
-          <input type="text" @keydown.enter="editarPerfil()"/>
+          <input type="text" @keydown.enter="editarPerfil()" />
         </div>
         <div class="new">
           <span>Confirme a senha:</span>
         </div>
         <div class="re-password">
-          <input type="text" @keydown.enter="editarPerfil()"/>
+          <input type="text" @keydown.enter="editarPerfil()" />
           <div class="btn"></div>
         </div>
         <div class="logout">

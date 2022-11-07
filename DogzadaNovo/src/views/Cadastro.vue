@@ -10,9 +10,9 @@
       async register() {
         try {
           const createdUser = await axios.post(
-            "http://localhost:8000/auth/",
-            this.user, 
-            alert("Usuario registrado com sucesso"),
+            "http://localhost:8000/usuarios/",
+            this.user,
+            alert("Usuario registrado com sucesso")
           );
           this.$router.push("/login");
         } catch (e) {
@@ -44,7 +44,7 @@
               <div class="input-box">
                 <label for="firstname">Primeiro Nome</label>
                 <input
-                @keydown.enter="register()"
+                  @keydown.enter="register()"
                   id="firstname"
                   type="text"
                   name="firstname"
@@ -57,7 +57,7 @@
               <div class="input-box">
                 <label for="lastname">Sobrenome</label>
                 <input
-                @keydown.enter="register()"
+                  @keydown.enter="register()"
                   id="lastname"
                   type="text"
                   name="lastname"
@@ -69,7 +69,7 @@
               <div class="input-box">
                 <label for="email">E-mail</label>
                 <input
-                @keydown.enter="register()"
+                  @keydown.enter="register()"
                   id="email"
                   type="email"
                   name="email"
@@ -82,7 +82,7 @@
               <div class="input-box">
                 <label for="number">Username</label>
                 <input
-                @keydown.enter="register()"
+                  @keydown.enter="register()"
                   id="number"
                   type="tel"
                   name="number"
@@ -95,7 +95,7 @@
               <div class="input-box">
                 <label for="password">Senha</label>
                 <input
-                @keydown.enter="register()"
+                  @keydown.enter="register()"
                   id="password"
                   type="password"
                   name="password"
