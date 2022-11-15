@@ -92,4 +92,19 @@
   button {
     margin-left: 30px;
   }
+  @media only screen and (max-width: 897px) {
+    .carousel__item img {
+    border-radius: 2px;
+    width: 100vw;
+    height: 60vw;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+    .carousel__item img {
+    border-radius: 2px;
+    width: 100vw;
+    height: 70vw;
+  }
+}
 </style>

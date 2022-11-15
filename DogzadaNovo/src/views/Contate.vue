@@ -67,20 +67,7 @@
         </div>
 
         <div class="card-resp"> 
-
-
-      <div class="cards">
-        <div class="avatar">
-          <img src="../assets/img/ivo.png" alt="" />
-        </div>
-        <div class="title-5">
-          <h1>Cabo Riegel</h1>
-        </div>
-        <div class="desc">
-          <span> Professor orientador do Projeto Integrador IFC 3INFO1. </span>
-          <a href="https://github.com/ivoriegel"><button>GitHub</button></a>
-        </div>
-      </div>
+  
     </div>
   </div>
         </div>
