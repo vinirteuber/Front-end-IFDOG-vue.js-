@@ -8,13 +8,18 @@
         user: {
           username: "",
           email: "",
+          first_name: "",
         },
       };
     },
+    // async created() {
+    //   // const user = await axios.get("http://localhost:8000/token/");
+    //   // this.user = cachorros.data;
+    // },
     async created() {
-      // const user = await axios.get("http://localhost:8000/token/");
-      // this.user = cachorros.data;
-    },
+    const res = await axios.get(`http://localhost:8000/usuarios/${this.id}/`);
+    this.user = res.data;
+  },
     methods: {
       async editarPerfil() {
         try {
@@ -30,11 +35,12 @@
     },
     computed: {
       ...mapStores(useAuthStore),
-      ...mapState(useAuthStore, ["username", "email", "id"]),
+      ...mapState(useAuthStore, ["username", "email", "id", "first_name"]),
     },
     mounted() {
       this.user.email = this.email;
       this.user.username = this.username;
+      this.user.first_name = this.first_name;
     },
   };
 </script>
@@ -45,11 +51,15 @@
       <div class="circle-1"></div>
       <div class="circle-2"></div>
       <div class="container">
-        <div class="avatar">
-          <img
-            src="https://cdn1.vectorstock.com/i/1000x1000/20/65/man-avatar-profile-vector-21372065.jpg"
-            alt=""
-          />
+
+        <div class="avatar">       
+          <img :src="user.foto.url" />
+        </div>
+
+        <div class="alterar-foto">
+          <button>
+            <input type="file" name="" id="" class="change-foto">
+          </button>
         </div>
         <div class="user-name">
           <div>
@@ -58,7 +68,7 @@
         </div>
         <div class="user-email">
           <div>
-            <span>{{ email }}</span>
+            <span>{{ first_name }}</span>
           </div>
         </div>
 
@@ -105,6 +115,13 @@
 </template>
 
 <style scoped>
+
+.change-foto{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
   input {
     width: 350px;
     height: 40px;
