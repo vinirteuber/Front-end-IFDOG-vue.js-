@@ -20,7 +20,27 @@
     const res = await axios.get(`http://localhost:8000/usuarios/${this.id}/`);
     this.user = res.data;
   },
+  
+  alterarImagemPerfil() {
+      const imagem = this.$refs["input-imagem-perfil"].files[0];
+      const reader = new FileReader();
+      const _this = this;
+
+      reader.onload = async () => {
+        const resultado = reader.result.split(",")[1];
+
+        await axios.patch(`/usuarios/${_this.usuario.id}/`, {
+          imagem_perfil: resultado,
+        });
+
+        _this.getUsuario();
+      };
+
+      reader.readAsDataURL(imagem);
+    },
     methods: {
+      
+     
       async editarPerfil() {
         try {
           await axios.patch(
@@ -37,6 +57,7 @@
       ...mapStores(useAuthStore),
       ...mapState(useAuthStore, ["username", "email", "id", "first_name"]),
     },
+    
     mounted() {
       this.user.email = this.email;
       this.user.username = this.username;
@@ -54,12 +75,6 @@
 
         <div class="avatar">       
           <img :src="user.foto.url" />
-        </div>
-
-        <div class="alterar-foto">
-          <button>
-            <input type="file" name="" id="" class="change-foto">
-          </button>
         </div>
         <div class="user-name">
           <div>
@@ -102,6 +117,19 @@
         <div class="re-password">
           <input type="text" @keydown.enter="editarPerfil()" />
           <div class="btn"></div>
+          <button
+          class="text-white-perfil"
+          @click="$refs['input-imagem-perfil'].click()"
+          v-if="!$route.params.id"
+        >
+          Alterar foto de Perfil
+        </button>
+        <input
+        type="file"
+        v-show="false"
+        ref="input-imagem-perfil"
+        @change="alterarImagemPerfil"
+      />
         </div>
         <div class="logout">
           <a href="/signin">
@@ -115,12 +143,6 @@
 </template>
 
 <style scoped>
-
-.change-foto{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
   input {
     width: 350px;
