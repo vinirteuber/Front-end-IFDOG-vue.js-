@@ -26,6 +26,20 @@ export default {
           alert("Erro 2222");
         }
       },
+      uploadFile() {
+        this.Images = this.$refs.file.files[0];
+      },
+      async submitFile() {
+        const formData = new FormData();
+        formData.append('file', this.Images);
+        const headers = { 'Content-Type': 'multipart/form-data' };
+        const { data } = await  axios.post('http://localhost:8000/api/media/images/', formData, { headers })
+        this.cachorro.foto_attachment_key = data.attachment_key
+        await axios.post(
+            "http://localhost:8000/cachorros/",
+            this.cachorro
+          )
+      },
     },
     computed: {
       ...mapStores(useAuthStore),
@@ -63,7 +77,7 @@ export default {
               <div class="input-box">
                 <label for="firstname">Nome do cão</label>
                 <input
-                @keydown.enter="addDog()"
+                @keydown.enter="submitFile()"
                   id="nome"
                   type="text"
                   name="nome"
@@ -76,7 +90,7 @@ export default {
               <div class="input-box">
                 <label for="lastname">desc</label>
                 <input
-                @keydown.enter="addDog()"
+                @keydown.enter="submitFile()"
                   id="descricao"
                   type="text"
                   name="descricao"
@@ -90,7 +104,7 @@ export default {
               <div class="input-box">
                 <label for="email">Peso</label>
                 <input
-                @keydown.enter="addDog()"
+                @keydown.enter="submitFile()"
                   id="peso "
                   type="text"
                   name="peso"
@@ -103,7 +117,7 @@ export default {
               <div class="input-box">
                 <label for="number">altura</label>
                 <input
-                @keydown.enter="addDog()"
+                @keydown.enter="submitFile()"
                   id="altura"
                   type="text"
                   name="altura"
@@ -116,7 +130,7 @@ export default {
               <div class="input-box">
                 <label for="password">responsavel</label>
                 <input
-                @keydown.enter="addDog()"
+                @keydown.enter="submitFile()"
                   id="nome_responsavel"
                   type="text"
                   name="nome_responsavel"
@@ -129,7 +143,7 @@ export default {
               <div class="input-box">
                 <label for="confirmPassword">tel_responsavel</label>
                 <input
-                  @keydown.enter="addDog()"
+                  @keydown.enter="submitFile()"
                   id="tel_responsavel"
                   type="text"
                   name="tel_responsavel"
@@ -139,9 +153,12 @@ export default {
                 />
               </div>
             </div>
+            <div class="alterar-foto">
+              <input type="file" @change="uploadFile" ref="file" >
+           </div>
 
             <div class="continue-button">
-              <button @click.prevent="addDog">Adicione</button>
+              <button @click.prevent="submitFile" >Adicione</button>
             </div>
           </div>
         </form>

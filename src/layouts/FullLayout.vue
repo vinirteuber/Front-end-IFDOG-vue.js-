@@ -30,7 +30,7 @@
         <ul class="menu__box">
           <li><RouterLink to="/cachorrada">Home</RouterLink></li>
           <li><RouterLink to="/comentarios">Aba de Comentarios</RouterLink></li>
-          <li><RouterLink to="/contate">Sobre nós</RouterLink></li>
+          <li><RouterLink to="/postcachorro">Novo cão</RouterLink></li>
           <li v-if="username">
             <RouterLink to="/singout">{{ username }}</RouterLink>
           </li>
@@ -68,7 +68,7 @@
             </li>
 
             <li>
-              <RouterLink to="/contate">Sobre nós</RouterLink>
+              <RouterLink to="/postcachorro">Novo cão</RouterLink>
             </li>
             <li v-if="username">
               <RouterLink to="/singout">{{ username }}</RouterLink>
