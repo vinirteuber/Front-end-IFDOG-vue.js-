@@ -19,6 +19,10 @@
       >
       <div class="help-link">
         <span><a href="#">Estou em apuros? Clique aqui</a></span>
+        
+      <RouterLink :to="`/cachorro/${cachorro.id}`"
+        ><button>clique aqui</button></RouterLink
+      >
       </div>
     </div>
   </div>

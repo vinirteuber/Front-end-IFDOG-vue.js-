@@ -28,9 +28,9 @@
         </label>
 
         <ul class="menu__box">
-          <li><RouterLink to="/cachorrada">Home</RouterLink></li>
+          <li><RouterLink to="/cachorrada" >Home</RouterLink></li>
           <li><RouterLink to="/comentarios">Aba de Comentarios</RouterLink></li>
-          <li><RouterLink to="/postcachorro">Novo cão</RouterLink></li>
+          <li><RouterLink to="/postcachorro" v-if="0 === '2'">Novo cão</RouterLink></li>
           <li v-if="username">
             <RouterLink to="/singout">{{ username }}</RouterLink>
           </li>
@@ -66,9 +66,11 @@
             <li>
               <RouterLink to="/comentarios">Aba de Comentarios</RouterLink>
             </li>
-
-            <li>
-              <RouterLink to="/postcachorro">Novo cão</RouterLink>
+            <li v-if="username">
+              <RouterLink to="/postcachorro">Novo dog</RouterLink>
+            </li>
+            <li v-else>
+              <RouterLink to="/contate">Sobre Nos</RouterLink>
             </li>
             <li v-if="username">
               <RouterLink to="/singout">{{ username }}</RouterLink>
